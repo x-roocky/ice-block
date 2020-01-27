@@ -1,19 +1,27 @@
-.hexagon-none {
+.ice-0 {
   fill:rgb(93, 95, 219);
   opacity:0.05;
   stroke:purple;
-  stroke-width:1;
+  stroke-width:2;
 }
 
-.hexagon-blue {
+.ice-1 {
   fill:rgb(93, 95, 219);
   stroke:purple;
-  stroke-width:1;
+  stroke-width:2;
 }
 
-.hexagon-white {
+.ice-2 {
   fill:rgb(93, 95, 219);
-  opacity:0.2;
+  opacity:0.4;
   stroke:purple;
-  stroke-width:1;
+  stroke-width:2;
+}
+
+.crood-x {
+  display: flex;
+}
+
+.crood-x div {
+  width: 6em;
 }
