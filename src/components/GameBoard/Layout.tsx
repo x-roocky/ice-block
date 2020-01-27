@@ -4,9 +4,9 @@ import { Ice } from './Ice'
 export function Layout () {
   return (
     <div>
-      <Ice />
-      <Ice />
-      <Ice />
+      <Ice color='none' />
+      <Ice color='blue' />
+      <Ice color='white'/>
     </div>
   )
 }

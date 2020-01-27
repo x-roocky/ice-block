@@ -1,0 +1,19 @@
+.hexagon-none {
+  fill:rgb(93, 95, 219);
+  opacity:0.05;
+  stroke:purple;
+  stroke-width:1;
+}
+
+.hexagon-blue {
+  fill:rgb(93, 95, 219);
+  stroke:purple;
+  stroke-width:1;
+}
+
+.hexagon-white {
+  fill:rgb(93, 95, 219);
+  opacity:0.2;
+  stroke:purple;
+  stroke-width:1;
+}
