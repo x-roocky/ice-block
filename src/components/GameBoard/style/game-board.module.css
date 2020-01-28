@@ -1,6 +1,6 @@
 .ice-0 {
-  fill:rgb(93, 95, 219);
-  opacity:0.05;
+  fill:rgb(5, 5, 22);
+  opacity:0.1;
   stroke:purple;
   stroke-width:2;
 }
@@ -23,5 +23,5 @@
 }
 
 .crood-x div {
-  width: 6em;
+  width: 3em;
 }

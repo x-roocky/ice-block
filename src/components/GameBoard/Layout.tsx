@@ -11,9 +11,9 @@ export function Layout (props: LayoutProps) {
 
   const ices = colors.map((row, i) => {
     const rowIce = row.map((color, j) => (
-      <div key={j}>
-        <Ice color={color} />
-      </div>
+        <div key={j}>
+          <Ice color={color} />
+        </div>
     ))
 
     return (
@@ -22,7 +22,7 @@ export function Layout (props: LayoutProps) {
         className={classes['crood-x']}
         style={{
           position: 'absolute',
-          left: i % 2 === 0 ? '3em' : '0em',
+          left: '0em',
           top: `${i * 1.732051}em`
         }}
       >
