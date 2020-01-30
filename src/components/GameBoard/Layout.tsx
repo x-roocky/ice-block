@@ -16,6 +16,44 @@ function isInHexagon(x: number, y: number, left: number, top: number) {
           remX - 3 < remY    // 右上斜线
 }
 
+function isExist(colors: Color[][], x: number, y: number) {
+  return (colors[y] === undefined || colors[y][x] === undefined || colors[y][x] !== 0) ? 1 : 0
+}
+
+function isFirm(dirs: number[]) {
+  for (let i = 0; i < dirs.length; ++i) {
+    if (dirs[i] && (dirs[(i + 3) % 6] || (dirs[(i + 2) % 6] && dirs[(i + 4) % 6]))) {
+      return true;
+    }
+  }
+}
+
+function checkOne(colors: Color[][], x: number, y: number) {
+  const dirs = []
+  dirs[0] = isExist(colors, x - 1, y - 1, )
+  dirs[1] = isExist(colors, x, y - 2)
+  dirs[2] = isExist(colors, x + 1, y - 1)
+  dirs[3] = isExist(colors, x + 1, y + 1)
+  dirs[4] = isExist(colors, x, y + 2)
+  dirs[5] = isExist(colors,  x - 1, y + 1)
+
+  return isFirm(dirs)
+}
+
+function checkAll(colors: Color[][]) {
+  for (let i = 0; i < colors.length; ++i) {
+    for (let j = 0; j < colors[i].length; ++j) {
+      if (colors[i][j]) {
+        if (!checkOne(colors, j, i)) {
+          colors[i][j] = 0
+          i = 0
+          j = 0
+        }
+      }
+    }
+  }
+}
+
 export function Layout (props: LayoutProps) {
   const [colors, setColors] = React.useState(props.colors)
   const element: React.RefObject<HTMLDivElement> = React.createRef()
@@ -30,7 +68,8 @@ export function Layout (props: LayoutProps) {
     for (let i = 0; i < colors.length; ++i) {
       for (let j = 0; j < colors[i].length; ++j) {
         if (colors[i][j] && isInHexagon(posX, posY, j, i)) {
-          colors[i][j] = colors[i][j] === 1 ? 2 : 1
+          colors[i][j] = 0
+          checkAll(colors)
           setColors([...colors])
         }
       }
